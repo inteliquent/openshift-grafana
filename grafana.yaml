@@ -156,8 +156,9 @@ objects:
         - name: grafana-tls
           secret:
             secretName: grafana-tls
-        - emptyDir: {}
-          name: grafana-data
+        - name: grafana-data
+          persistentVolumeClaim:
+            claimName: grafana-pvc
 - apiVersion: v1
   kind: ConfigMap
   metadata:
